@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><span class="lang-ro">DecoImob - Acasă</span><span class="lang-en hidden">DecoImob - Home</span></title>
+  <meta name="description" content="Administrare imobile completă: contabilitate, mentenanță, curățenie și suport AI. București & Ilfov." />
+  <link rel="icon" href="/assets/img/favicon-decoimob.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/36c7c06e1e.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+<!-- HEADER complet -->
+<header class="bg-[#14386C] text-white px-6 py-4">
+  <div class="flex items-center justify-between">
+    <!-- Comutator limbă -->
+    <div class="flex items-center space-x-2 ml-4">
+  <button id="btn-ro" class="text-white font-semibold" onclick="setLanguage('ro')">RO</button>
+  <span class="text-white">|</span>
+  <button id="btn-en" class="text-white font-semibold" onclick="setLanguage('en')">EN</button>
+</div>
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img alt="Logo DecoImob AI" class="h-10 md:h-12 w-auto rounded-2xl" src="/assets/img/logo-decoimob-ai.png"/>
+      <a class="text-xl font-bold uppercase" href="/">DECOIMOB</a>
+    </div>
+    <!-- Buton hamburger -->
+    <button class="md:hidden focus:outline-none" id="menu-toggle">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <!-- Meniu Desktop -->
+    <nav class="hidden md:flex items-center space-x-6 font-medium uppercase">
+      <div class="relative group">
+        <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">SERVICII</span><span class="lang-en hidden">SERVICES</span></a>
+        <div class="absolute hidden group-hover:block bg-white text-black mt-2 rounded shadow-lg p-2 text-sm z-50 space-y-1">
+          <a href="#">ADMINISTRARE IMOBILE</a>
+          <a href="#">FINANCIAR-CONTABILE</a>
+          <a href="#">CENZORAT</a>
+          <a href="#">AUDIT FINANCIAR - CONTABIL</a>
+          <a href="#">MENTENANȚĂ-TEHNICĂ</a>
+          <a href="#">TEHNICE</a>
+          <a href="#">CURĂȚENIE</a>
+        </div>
+      </div>
+      <div class="relative group">
+        <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">PAGINI</span><span class="lang-en hidden">PAGES</span></a>
+        <div class="absolute hidden group-hover:grid grid-cols-2 gap-2 bg-white text-black mt-2 rounded shadow-lg p-2 text-sm z-50">
+          <div class="space-y-1">
+            <a href="#">ADMINISTRARE IMOBILE</a>
+            <a href="#">FINANCIAR-CONTABILE</a>
+            <a href="#">CENZORAT</a>
+            <a href="#">AUDIT FINANCIAR-CONTABIL</a>
+            <a href="#">MENTENANȚĂ TEHNICĂ</a>
+            <a href="#">TEHNICE</a>
+            <a href="#">CURĂȚENIE</a>
+          </div>
+          <div class="space-y-1">
+            <a href="#">DECOIMOB</a>
+            <a href="#">LEGISLAȚIE</a>
+            <a href="#"><span class="lang-ro">DESPRE NOI</span><span class="lang-en hidden">ABOUT US</span></a>
+            <a href="#"><span class="lang-ro">CONTACT</span><span class="lang-en hidden">CONTACT</span></a>
+          </div>
+        </div>
+      </div>
+      <a class="hover:text-yellow-400 transition" href="#">LEGISLAȚIE</a>
+      <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">DESPRE NOI</span><span class="lang-en hidden">ABOUT US</span></a>
+      <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">CONTACT</span><span class="lang-en hidden">CONTACT</span></a>
+      <a class="bg-yellow-400 text-black px-4 py-1 rounded hover:bg-yellow-300 transition" href="#"><span class="lang-ro">IA LEGĂTURA</span><span class="lang-en hidden">GET IN TOUCH</span></a>
+    </nav>
+  </div>
+  <!-- Meniu Mobil -->
+  <div class="md:hidden hidden flex-col space-y-3 mt-4 font-medium uppercase bg-[#14386C] text-white p-4 rounded-lg shadow-md" id="mobile-menu">
+    <a class="hover:text-yellow-400 transition" href="#">DECOIMOB</a>
+    <details>
+      <summary class="cursor-pointer hover:text-yellow-400"><span class="lang-ro">SERVICII</span><span class="lang-en hidden">SERVICES</span></summary>
+      <div class="pl-4 mt-2 space-y-1 text-sm">
+        <a href="#">ADMINISTRARE IMOBILE</a>
+        <a href="#">FINANCIAR-CONTABILE</a>
+        <a href="#">CENZORAT</a>
+        <a href="#">AUDIT FINANCIAR - CONTABIL</a>
+        <a href="#">MENTENANȚĂ-TEHNICĂ</a>
+        <a href="#">TEHNICE</a>
+        <a href="#">CURĂȚENIE</a>
+      </div>
+    </details>
+    <details>
+      <summary class="cursor-pointer hover:text-yellow-400"><span class="lang-ro">PAGINI</span><span class="lang-en hidden">PAGES</span></summary>
+      <div class="pl-4 mt-2 space-y-1 text-sm">
+        <a href="#">ADMINISTRARE IMOBILE</a>
+        <a href="#">FINANCIAR-CONTABILE</a>
+        <a href="#">CENZORAT</a>
+        <a href="#">AUDIT FINANCIAR-CONTABIL</a>
+        <a href="#">MENTENANȚĂ TEHNICĂ</a>
+        <a href="#">TEHNICE</a>
+        <a href="#">CURĂȚENIE</a>
+        <a href="#">DECOIMOB</a>
+        <a href="#">LEGISLAȚIE</a>
+        <a href="#"><span class="lang-ro">DESPRE NOI</span><span class="lang-en hidden">ABOUT US</span></a>
+        <a href="#"><span class="lang-ro">CONTACT</span><span class="lang-en hidden">CONTACT</span></a>
+      </div>
+    </details>
+    <a class="hover:text-yellow-400 transition" href="#">LEGISLAȚIE</a>
+    <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">DESPRE NOI</span><span class="lang-en hidden">ABOUT US</span></a>
+    <a class="hover:text-yellow-400 transition" href="#"><span class="lang-ro">CONTACT</span><span class="lang-en hidden">CONTACT</span></a>
+    <a class="bg-yellow-400 text-black px-4 py-1 rounded hover:bg-yellow-300 transition" href="#"><span class="lang-ro">IA LEGĂTURA</span><span class="lang-en hidden">GET IN TOUCH</span></a>
+  </div>
+  <!-- Script Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      toggleBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</header>
+
+
+<!-- HERO -->
+<section class="bg-[#14386C] text-white py-12 px-4 md:px-10 rounded-b-3xl">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="md:w-1/2">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+        <span class="lang-ro">Administrare imobile modernă și eficientă</span>
+        <span class="lang-en hidden">Modern and Efficient Property Management</span>
+      </h1>
+      <p class="text-lg md:text-xl opacity-90 mb-6">
+        <span class="lang-ro">Servicii integrate: administrare, contabilitate, tehnic, curățenie și suport AI</span>
+        <span class="lang-en hidden">Integrated services: management, accounting, technical, cleaning and AI support</span>
+      </p>
+      <a href="/contact" class="inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        <span class="lang-ro">Contactează-ne</span>
+        <span class="lang-en hidden">Contact Us</span>
+      </a>
+    </div>
+    <div class="md:w-1/2">
+      <img src="/assets/img/hero-decoimob.png" alt="Hero DecoImob" class="rounded-2xl shadow-lg w-full" />
+    </div>
+  </div>
+</section>
+
+<!-- DESPRE DECOIMOB -->
+<section class="max-w-5xl mx-auto px-4 py-12 text-center">
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">
+    <span class="lang-ro">Despre DecoImob</span>
+    <span class="lang-en hidden">About DecoImob</span>
+  </h2>
+  <p class="text-lg max-w-3xl mx-auto">
+    <span class="lang-ro">DecoImob este o firmă profesionistă de administrare și întreținere imobile în București, oferind servicii integrate pentru asociații de proprietari și ansambluri rezidențiale: administrare imobile, contabilitate, audit, mentenanță tehnică, curățenie, cenzorat, arhivare și soluții digitale.</span>
+    <span class="lang-en hidden">DecoImob is a professional property management company based in Bucharest, offering integrated services for homeowner associations and residential complexes: property admin, accounting, audit, technical maintenance, cleaning, censors, archiving and digital solutions.</span>
+  </p>
+</section>
+
+<!-- SERVICII PRINCIPALE -->
+<section class="bg-white py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">
+      <span class="lang-ro">Serviciile Noastre</span>
+      <span class="lang-en hidden">Our Services</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-building fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Administrare Imobile</span>
+          <span class="lang-en hidden">Property Management</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Gestionăm complet imobilele și relația cu asociațiile de proprietari.</span>
+          <span class="lang-en hidden">We fully manage properties and relations with homeowner associations.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-chart-line fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Financiar-Contabile</span>
+          <span class="lang-en hidden">Financial & Accounting</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Servicii contabile complete și raportări lunare transparente.</span>
+          <span class="lang-en hidden">Full accounting services and transparent monthly reports.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-user-check fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Cenzorat</span>
+          <span class="lang-en hidden">Censor Services</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Verificarea corectitudinii gestiunii financiare a asociației.</span>
+          <span class="lang-en hidden">Verification of financial management accuracy for the association.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-file-invoice-dollar fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Audit Financiar Contabil</span>
+          <span class="lang-en hidden">Financial Accounting Audit</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Audit profesional pentru transparență și conformitate.</span>
+          <span class="lang-en hidden">Professional audits ensuring transparency and compliance.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-tools fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Mentenanță Tehnică</span>
+          <span class="lang-en hidden">Technical Maintenance</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Intervenții rapide și întreținere pentru instalații și echipamente.</span>
+          <span class="lang-en hidden">Quick interventions and maintenance for installations and equipment.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-cogs fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Tehnice</span>
+          <span class="lang-en hidden">Technical Services</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Verificări, reparații și servicii tehnice specializate.</span>
+          <span class="lang-en hidden">Inspections, repairs, and specialized technical services.</span>
+        </p>
+      </div>
+
+      <div class="bg-gray-100 rounded-xl p-6 shadow-md text-center">
+        <i class="fas fa-broom fa-2x text-blue-600 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">
+          <span class="lang-ro">Curățenie</span>
+          <span class="lang-en hidden">Cleaning</span>
+        </h3>
+        <p class="text-gray-600 text-sm">
+          <span class="lang-ro">Servicii de curățenie profesională pentru spații comune și birouri.</span>
+          <span class="lang-en hidden">Professional cleaning for common areas and offices.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAJE -->
+<section class="bg-gray-100 py-12 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">
+      <span class="lang-ro">De ce să alegi DecoImob?</span>
+      <span class="lang-en hidden">Why Choose DecoImob?</span>
+    </h2>
+    <ul class="space-y-4 text-lg">
+      <li>✅ <span class="lang-ro">Echipă completă: contabili, tehnicieni, electricieni, instalatori</span><span class="lang-en hidden">Full team: accountants, technicians, electricians, plumbers</span></li>
+      <li>✅ <span class="lang-ro">Servicii personalizate pentru fiecare imobil</span><span class="lang-en hidden">Tailored services for every property</span></li>
+      <li>✅ <span class="lang-ro">Transparență și acces la documente online</span><span class="lang-en hidden">Transparency and online access to documents</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- AI ASSISTANT -->
+<section class="max-w-5xl mx-auto px-4 py-12">
+  <div class="bg-white shadow-lg rounded-xl p-8">
+    <h2 class="text-xl font-bold mb-4">
+      <span class="lang-ro">Asistent AI</span>
+      <span class="lang-en hidden">AI Assistant</span>
+    </h2>
+    <p class="text-gray-700 mb-2">
+      <span class="lang-ro">Întreabă-ne orice despre serviciile noastre!</span>
+      <span class="lang-en hidden">Ask us anything about our services!</span>
+    </p>
+    <ul class="text-sm text-gray-600">
+      <li>• <span class="lang-ro">Ce servicii oferiți?</span><span class="lang-en hidden">What services do you offer?</span></li>
+      <li>• <span class="lang-ro">Care sunt planurile tarifare?</span><span class="lang-en hidden">What are the pricing plans?</span></li>
+      <li>• <span class="lang-ro">Cum pot lua legătura cu un operator?</span><span class="lang-en hidden">How can I talk to an operator?</span></li>
+    </ul>
+  </div>
+</section>
+	<!-- CHATBOT -->
+<script>
+  window.onload = function () {
+    const script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/@chatscope/chat-ui-kit-styles@3.4.0/dist/default/styles.min.css";
+    document.head.appendChild(script);
+
+    const container = document.createElement("div");
+    container.id = "chat-widget";
+    container.style.position = "fixed";
+    container.style.bottom = "20px";
+    container.style.right = "20px";
+    container.style.zIndex = "9999";
+    container.innerHTML = `
+      <iframe
+        src="https://gptbot.one/widget?title=Asistent%20DecoImob&subtitle=Întreabă%20despre%20servicii&icon=💬"
+        style="width: 360px; height: 500px; border: none; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);"
+        allow="clipboard-write"
+      ></iframe>
+    `;
+    document.body.appendChild(container);
+  };
+</script>
+
+<!-- CTA FINAL -->
+<section class="bg-[#14386C] text-white text-center py-12">
+  <h2 class="text-2xl md:text-3xl font-bold mb-4">
+    <span class="lang-ro">Gata să lucrăm împreună?</span>
+    <span class="lang-en hidden">Ready to work with us?</span>
+  </h2>
+  <p class="mb-6 text-lg">
+    <span class="lang-ro">Contactează-ne pentru o ofertă personalizată.</span>
+    <span class="lang-en hidden">Get in touch for a custom offer.</span>
+  </p>
+  <a href="/contact" class="inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">
+    <span class="lang-ro">Contactează-ne</span>
+    <span class="lang-en hidden">Contact Us</span>
+  </a>
+</section>
+
+<!-- FOOTER complet -->
+<footer class="bg-white border-t mt-12">
+  <div class="max-w-7xl mx-auto px-4 py-8 md:flex md:items-center md:justify-between">
+    <p class="text-sm text-gray-600 text-center md:text-left">
+      <span class="lang-ro">© 2025 DecoImob. Toate drepturile rezervate.</span>
+      <span class="lang-en hidden">© 2025 DecoImob. All rights reserved.</span>
+    </p>
+    <div class="mt-4 md:mt-0 flex justify-center space-x-4">
+      <a href="mailto:office@decoimob.ro" class="text-gray-600 hover:text-blue-600 text-sm">office@decoimob.ro</a>
+      <span class="text-gray-400">|</span>
+      <a href="tel:+40740000000" class="text-gray-600 hover:text-blue-600 text-sm">
+        <span class="lang-ro">0756 362 828</span>
+        <span class="lang-en hidden">+0756 362 828</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCRIPT LIMBA -->
+<script>
+  function setLanguage(lang) {
+    const roElements = document.querySelectorAll('.lang-ro');
+    const enElements = document.querySelectorAll('.lang-en');
+    const btnRo = document.getElementById('btn-ro');
+    const btnEn = document.getElementById('btn-en');
+
+    if (lang === 'ro') {
+      roElements.forEach(el => el.classList.remove('hidden'));
+      enElements.forEach(el => el.classList.add('hidden'));
+      btnRo.classList.add('text-yellow-400');
+      btnRo.classList.remove('text-white');
+      btnEn.classList.add('text-white');
+      btnEn.classList.remove('text-yellow-400');
+    } else {
+      roElements.forEach(el => el.classList.add('hidden'));
+      enElements.forEach(el => el.classList.remove('hidden'));
+      btnEn.classList.add('text-yellow-400');
+      btnEn.classList.remove('text-white');
+      btnRo.classList.add('text-white');
+      btnRo.classList.remove('text-yellow-400');
+    }
+  }
+
+  // Setare inițială pe RO la încărcare:
+  document.addEventListener('DOMContentLoaded', () => setLanguage('ro'));
+</script>
+</body>
+</html>
